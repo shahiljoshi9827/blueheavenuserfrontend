@@ -1,0 +1,101 @@
+   <script>
+        function printDiv(divName){
+          var printContents = document.getElementById(divName).innerHTML;
+          var originalContents = document.body.innerHTML;
+          document.body.innerHTML = printContents;
+          window.print();
+          document.body.innerHTML = originalContents;
+        }
+      </script>
+
+<section class="banner-area organic-breadcrumb" style="width: 1530px;">
+    <div class="container">
+      <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+        <div class="col-first">
+          <h1>Confirmation</h1>
+          <nav class="d-flex align-items-center">
+            <a [routerLink]="['/homeuser']">Home<span class="lnr lnr-arrow-right"></span></a>
+            <a [routerLink]="['/confirmation']">Confirmation</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Banner Area -->
+
+  <!--================Order Details Area =================-->
+
+  <section class="order_details section_gap">
+    <div class="container" id="abc">
+      <h3 class="title_confirmation">Thank you. Your order has been received.</h3>
+      <div class="row order_d_inner">
+        <div class="col-lg-4">
+          <div class="details_item">
+            <h4>Order Info</h4>
+            <ul class="list">
+              <li><a   ><span>Order Id</span> : {{mainorder_id}}</a></li>
+              <li><a><span>Date</span> : {{mainorder_date}}</a></li>
+              <li><a><span>Total</span> :Rs {{mainorder_amount}}</a></li>
+              <li><a><span>Payment method</span> : {{payment_mode}}</a></li>
+                        </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="details_item">
+            <h4>Billing Address</h4>
+            <ul class="list">
+              <li><a   ><span>Street</span> : <p >{{user_address1}}</p></a></li>
+              <li><a   ><span>City</span> : Naranpura</a></li>
+              <li><a   ><span>Country</span> : Ahmedabad</a></li>
+              <li><a   ><span>Postcode </span> : 380063</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="details_item">
+            <h4>Shipping Address</h4>
+            <ul class="list">
+              <li><a><span>Street</span> : <p >{{user_address1}}</p></a></li>
+              <li><a><span>City</span> : Naranpura</a></li>
+              <li><a><span>Country</span> : Ahmedabad</a></li>
+              <li><a><span>Postcode </span> : 380063</a></li>
+             </ul>
+          </div>
+        </div>
+      </div>
+      <div class="order_details_table">
+        <h2>Order Details</h2>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of billarr">
+                <td>
+                  <p>{{item.product_name}}</p>
+                </td>
+                <td>
+                  <h5>x {{item.order_qty}}</h5>
+                </td>
+                <td>
+                  <p>Rs.{{item.order_amount}}</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+                              <div class="checkout_btn_inner d-flex align-items-center">
+
+                                  <a  class="genric-btn info" style="margin-left: 1100px;color: white;margin-top: 10px;" onclick="window.print('container')" >Print Or Download Bill</a>
+                                  </div>
+
+  </section>

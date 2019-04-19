@@ -1,0 +1,161 @@
+<!--
+<div  class=" col-md-6 col-lg-4" *ngFor="let item of displayproductarr"  >
+  <img  class="imagess" src="http://localhost:3000/images/products/{{item.product_image}}"alt="Photo of a Shiba Inu">
+
+</div>
+<div *ngFor="let item of displayproductarr">
+  <h3>{{item.product_name | titlecase}}</h3>
+    <p>{{item.product_price | currency:'&#8377;' }}</p>
+    <select  [(ngModel)]="product_qty" >
+      <option *ngFor="let item of qty1" >{{item}}</option>
+    </select>
+    <p>{{item.product_discription}}</p>
+    <button mat-raised-button color="accent" (click)="addtocart(item)">ADD TO CART</button>
+</div>
+ -->
+
+ <section class="banner-area organic-breadcrumb" style="width: 1540px;">
+  <div class="container">
+    <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+      <div class="col-first">
+        <h1>Product Details Page</h1>
+        <nav class="d-flex align-items-center">
+          <a [routerLink]="['/homeuser']">Home<span class="lnr lnr-arrow-right"></span></a>
+          <a [routerLink]="['/displayproduct']" >Shop<span class="lnr lnr-arrow-right"></span></a>
+          <a [routerLink]="['/productclick']">Product-details</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Banner Area -->
+
+<!--================Single Product Area =================-->
+
+
+<div class="product_image_area">
+  <div class="container">
+    <div class="row s_product_inner">
+      <div class="col-lg-6" *ngFor="let item of displayproductarr">
+        <div class="s_Product_carousel">
+          <div class="single-prd-item">
+            <img class="img-fluid" src="http://localhost:3000/images/products/{{item.product_image}}" alt="" style="
+            margin-top: 120px;
+            margin-left: 30px;
+        ">
+          </div>
+          <div class="single-prd-item">
+            <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+          </div>
+          <div class="single-prd-item">
+            <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1" *ngFor="let item of displayproductarr" >
+        <div class="s_product_text">
+          <h2>{{item.product_name | titlecase}}</h2>
+          <h2>{{item.product_price | currency:'&#8377;' }}</h2>
+          <ul class="list">
+            <li><a class="active"  ><span>Category</span> : Household</a></li>
+            <li><a  ><span>Availibility</span> : In Stock</a></li>
+          </ul>
+          <p>{{item.product_discription}}</p>
+          <div >
+            <label for="qty">Quantity:</label>
+            &nbsp;&nbsp;
+            <mat-form-field>
+
+           <mat-select placeholder="Qty" [(ngModel)]="product_qty" required>
+             <mat-option *ngFor="let item of qty1"  [value]="item" >
+                     {{item}}
+               </mat-option>
+           </mat-select>
+           </mat-form-field>
+         </div>
+
+           <div class="shipping_box">
+             <mat-form-field class="example-full-width">
+               <input matInput placeholder="Postcode/Zipcode" >
+             </mat-form-field>
+             &nbsp;&nbsp;
+           <a   class="genric-btn info">Check</a>
+
+           </div>
+           <!-- <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty"> -->
+            <!-- <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+             class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
+            <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp); sst > 0 ; result.value--;return false;"
+             class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button> -->
+
+
+          <br>
+          <br>
+
+          <div class="card_area d-flex align-items-center">
+            <a class="primary-btn"  (click)="addtocart(item)" style="color: white;">Add to Cart</a>
+            <a class="primary-btn"   style="color: white;" (click)="bynow(item)">Buy Now  </a>
+
+
+
+            <!-- <a class="icon_btn"  ><i class="lnr lnr lnr-diamond"></i></a>
+            <a class="icon_btn"  ><i class="lnr lnr lnr-heart"></i></a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--================End Single Product Area =================-->
+
+<!--================Product Description Area =================-->
+
+<section class="product_description_area">
+
+ <div class="container" >
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
+         aria-selected="false">Reviews</a>
+      </li>
+    </ul>
+    <div class="row">
+          <textarea  [(ngModel)]="feedback"  style="margin-left: 16px;height:200px;width: 1110px;border: 2px solid darkturquoise;border-radius: 4px; "  placeholder="Enter your feedback"></textarea>
+
+    </div>
+   <br>
+    <div class="card_area d-flex align-items-center">
+        <a class="primary-btn"  (click)="addfeedback()"  style="color: white;">Add Feedback</a>
+    </div>
+    <br>
+    <br>
+
+        <div class="row" style="margin-left:0px;height:200px;width: 1110px;border: 2px solid darkturquoise;border-radius: 4px; ">
+<br>
+          <div *ngFor="let item of feedback_arr" style="margin-left:30px  ;height: 100px;width: 100px;">
+
+            <label><span  class="glyphicon glyphicon-user" ></span>{{item.user_name}}</label>
+              <p>{{item.feedback}}</p>
+
+            </div>
+
+        </div>
+<br><br>
+<h1>Similer Products</h1><br><br>
+   <div class="col-lg-3 col-md-3 card" style="height: 400px;width: 300px;"  *ngFor="let item of similer"   >
+
+      <div class="single-product"  >
+
+          <img class="img-fluid zoom" (click)="product_click(item)" src="http://localhost:3000/images/products/{{ item.product_image }}" style="width:250px;height: 250px;" alt="">
+          <div class="product-details">
+            <h6 (click)="product_click(item)" >{{ item.product_name | titlecase }}</h6>
+            <div class="price">
+              <h6 (click)="product_click(item)">{{ item.product_price | currency: "&#8377;" }}</h6>
+              <h6 (click)="product_click(item)" class="l-through">210.00</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+

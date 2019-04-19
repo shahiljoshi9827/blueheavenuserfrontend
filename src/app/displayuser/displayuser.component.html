@@ -1,0 +1,45 @@
+<mat-card style="height:auto; width:500px; margin-left:480px;margin-top:120px ">
+
+  <div class="container" >
+    <h1 align="center">Display User</h1>
+ <br>
+    <table  align="center" class="table ">
+    <tr >
+    <mat-form-field style="width:400px; " class="example-full-width">
+      <input  matInput placeholder="EMAIL ID"  disabled type="email" [(ngModel)]="user_email_id" >
+    </mat-form-field>
+  </tr>
+  <tr>
+      <mat-form-field style="width:400px; "class="example-full-width">
+        <input matInput placeholder="user name" disabled type="text" [(ngModel)]="user_name" >
+      </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field style="width:400px; "class="example-full-width">
+        <input matInput placeholder="Mobile no" disabled type="text" [(ngModel)]="user_mobile_no">
+      </mat-form-field>
+    </tr>
+    <tr>
+         <mat-form-field style="width:400px; "class="example-full-width">
+           <input matInput placeholder="address" disabled type="text" [(ngModel)]="user_address">
+         </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field style="width:400px; "class="example-full-width">
+       <input matInput  type="text" disabled [(ngModel)]="user_dob">
+        <!-- {{ user_dob | date }} -->
+      </mat-form-field>
+    </tr>
+    <tr>
+      <!-- <mat-form-field class="example-full-width"> -->
+        <input   type="radio" value="Male" disabled name="gender" [(ngModel)]="user_gender">Male
+        <input   type="radio" value="FeMale" disabled  name="gender" [(ngModel)]="user_gender">Female
+      <!-- </mat-form-field> -->
+ </tr>
+</table><br><br>
+<button  mat-raised-button color="primary" (click)="edituser()">EDIT</button>&nbsp;&nbsp;&nbsp;
+
+
+</div>
+</mat-card>
+

@@ -1,0 +1,13 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.bg
+{
+  background-image: url('1.jpg');
+}
+
+.example-full-width {
+  width: 100%;
+}

@@ -1,0 +1,49 @@
+
+<section class="banner-area organic-breadcrumb" style="width: 1540px;">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>My `</h1>
+                <nav class="d-flex align-items-center">
+                    <a [routerLink]="['/homeuser']">Home<span class="lnr lnr-arrow-right"></span></a>
+                    <a [routerLink]="['/myorder']">My Orders</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section class="cart_area">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of pastorder;let i=index">
+                            <td>
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="http://localhost:3000/images/products/{{item.product_image}}" style="height:100px ;width: 100px;" alt="">
+                                    </div>
+                                    <div >
+                                        <p>{{item.product_name}}</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <h5>  {{item.amount}}</h5>
+                            </td>
+                            <td>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+  </section>

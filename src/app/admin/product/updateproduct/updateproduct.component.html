@@ -1,0 +1,50 @@
+<mat-card style="height:auto; width:500px; margin-left:480px;margin-top:120px ">
+
+    <div class="container">
+          <h1>Update Product</h1>
+        <table  class="table" align="center">
+            <tr>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Product Id" spellcheck="false"  type="text" [(ngModel)]="product_id"  disabled="true">
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Product Name" spellcheck="false"  type="text" [(ngModel)]="product_name"  >
+                </mat-form-field>
+            </tr>
+
+
+
+            <tr>
+                <!-- <input matInput placeholder="Image"  > -->
+                <!-- <img src="http://localhost:3000/images/products/{{element.product_image}}" height="40px" width="40px"> -->
+
+                <input class="form-control" id="trigger" type="file"  (change)="onchange($event)" accept="image/*">
+
+
+            </tr>
+            <tr>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Product Description"   type="text" [(ngModel)]="product_discription"  >
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-form-field class="example-full-width">
+                  <input matInput  placeholder="Product Qty"   type="number" [(ngModel)]="product_qty"  >
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Product Price"    type="number" [(ngModel)]="product_price"  >
+                </mat-form-field>
+            </tr>
+            <tr>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Brand id" type="text" [(ngModel)]="fk_brand_id" disabled="true"  >
+                </mat-form-field>
+            </tr>
+    </table>
+      <button mat-raised-button color="primary" (click)="updateproduct()" ><mat-icon>create</mat-icon> Update Product</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    </mat-card>

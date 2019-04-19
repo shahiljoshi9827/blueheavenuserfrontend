@@ -1,0 +1,37 @@
+<mat-card style="height:auto; width:500px; margin-left:480px;margin-top:120px ">
+
+<div class="container">
+      <h1>Add Product</h1>
+    <table  class="table" align="center">
+      <tr>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Product Name" spellcheck="false"  type="text" [(ngModel)]="product_name"  >
+            </mat-form-field>
+        </tr>
+        <tr>
+              <input   type="file" (change)="onchange($event)" >
+        </tr>
+        <tr>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Product Description"   type="text" [(ngModel)]="product_discription"  >
+            </mat-form-field>
+        </tr>
+        <tr>
+            <mat-form-field class="example-full-width">
+              <input matInput  placeholder="Product Qty"   type="number" [(ngModel)]="product_qty"  >
+            </mat-form-field>
+        </tr>
+        <tr>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Product Price"    type="number" [(ngModel)]="product_price"  >
+            </mat-form-field>
+        </tr>
+        <tr>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Brand id" type="text" [(ngModel)]="fk_brand_id"  >
+            </mat-form-field>
+        </tr>
+</table>
+  <button mat-raised-button color="primary" (click)="addproduct()" ><mat-icon>add</mat-icon> Addproduct</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+</mat-card>

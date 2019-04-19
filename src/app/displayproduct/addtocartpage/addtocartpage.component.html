@@ -1,0 +1,262 @@
+ <!-- <div class="col-sm-6 col-md-6 " style="height: 100px; width: 200px;" >
+  <label style="margin-left: 30px;"><u><b>ORDER LIST</b></u></label>
+  <div class="div"><br>
+    <table class="table">
+      <thead>
+        <th>  </th>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>QTY</th>
+        <th>ACTION</th>
+        <th>SUB TOTAL</th>
+      </thead>
+      <tr *ngFor="let item of addtocrtarr;let i=index">
+        <td>
+            <img src="http://localhost:3000/images/products/{{item.product_image}}" alt="..." style="height: 30px;width: 30px;border-radius: 20px;">
+        </td>
+        <td>
+              {{item.product_name}}
+        </td>
+        <td>
+          {{item.order_amount}}
+        </td>
+        <td>
+          <select [(ngModel)]="qty[i]"  (change)="totalprice(item.order_amount,i)">
+            <option *ngFor="let item of qty1" >{{item}}</option>
+          </select>
+        </td>
+        <td>
+            <button type="button" class="btn btn-default btn-lg " (click)="ondelete(item,i)">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+              </button>
+        </td>
+        <td >
+          {{price[i]}}
+        </td>
+      </tr>
+    </table>
+  <br>
+    <table>
+      <tr>
+        <td>Subtotal</td>
+        <td>{{total1}}</td>
+      </tr>
+      <tr>
+        <td>ShipingCharge</td>
+        <td>{{shipcharge}}</td>
+      </tr>
+      <tr>
+        <td>GST(12%)</td>
+        <td>{{GST}}</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td>{{grandtotal}}</td>
+      </tr>
+
+    </table>
+
+    <button type="button" class="btn btn-default btn-lg " >
+      <span class="glyphicon glyphicon-check" aria-hidden="true" (click)="checkout()"  > CheckOut</span>
+    </button>
+
+
+  </div>
+</div> -->
+<section class="banner-area organic-breadcrumb" style="width: 1540px;">
+  <div class="container">
+      <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+          <div class="col-first">
+              <h1>Shopping Cart</h1>
+              <nav class="d-flex align-items-center">
+                  <a [routerLink]="['/homeuser']">Home<span class="lnr lnr-arrow-right"></span></a>
+                  <a [routerLink]="['/addtocart']">Cart</a>
+              </nav>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- End Banner Area -->
+<!-- <div class="col-sm-6 col-md-6 " style="height: 100px; width: 200px;" >
+<label style="margin-left: 30px;"><u><b>ORDER LIST</b></u></label>
+<div class="div"><br>
+<table class="table">
+<thead>
+  <th>  </th>
+  <th>NAME</th>
+  <th>PRICE</th>
+  <th>QTY</th>
+  <th>ACTION</th>
+  <th>SUB TOTAL</th>
+</thead>
+<tr *ngFor="let item of addtocrtarr;let i=index">
+  <td>
+      <img src="http://localhost:3000/images/products/{{item.product_image}}" alt="..." style="height: 30px;width: 30px;border-radius: 20px;">
+  </td>
+  <td>
+        {{item.product_name}}
+  </td>
+  <td>
+    {{item.order_amount}}
+  </td>
+  <td>
+    <select [(ngModel)]="qty[i]"  (change)="totalprice(item.order_amount,i)">
+      <option *ngFor="let item of qty1" >{{item}}</option>
+    </select>
+  </td>
+  <td>
+      <button type="button" class="btn btn-default btn-lg " (click)="ondelete(item,i)">
+          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button>
+  </td>
+  <td >
+    {{price[i]}}
+  </td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+  <td>Subtotal</td>
+  <td>{{total1}}</td>
+</tr>
+<tr>
+  <td>ShipingCharge</td>
+  <td>{{shipcharge}}</td>
+</tr>
+<tr>
+  <td>GST(12%)</td>
+  <td>{{GST}}</td>
+</tr>
+<tr>
+  <td>Total</td>
+  <td>{{grandtotal}}</td>
+</tr>
+
+</table>
+
+<button type="button" class="btn btn-default btn-lg " >
+<span class="glyphicon glyphicon-check" aria-hidden="true" (click)="checkout()"  > CheckOut</span>
+</button>
+
+
+</div>
+</div> -->
+<!--================Cart Area =================-->
+<section class="cart_area">
+  <div class="container">
+      <div class="cart_inner">
+          <div class="table-responsive">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th scope="col">Product</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Quantity</th>
+                          <th scope="col">Total</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of addtocrtarr;let i=index">
+                          <td>
+                              <div class="media">
+                                  <div class="d-flex">
+                                      <img src="http://localhost:3000/images/products/{{item.product_image}}" style="height:100px ;width: 100px;" alt="">
+                                  </div>
+                                  <div >
+                                      <p>{{item.product_name}}</p>
+                                  </div>
+                              </div>
+                          </td>
+                          <td>
+                              <h5>  {{item.order_amount}}</h5>
+                          </td>
+                          <td>
+                            <mat-form-field>
+                              <mat-select placeholder="Qty" [(ngModel)]="qty[i]" (selectionChange)="totalprice(item,i)">
+                                <mat-option *ngFor="let item of qty1"  [value]="item" >
+                                        {{item}}
+                                  </mat-option>
+                              </mat-select>
+
+                            </mat-form-field>
+                              <!-- <div class="product_count">
+                                  <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:"
+                                      class="input-text qty">
+                                  <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+                                      class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
+                                  <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+                                      class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
+                              </div> -->
+                          </td>
+                          <td>
+                              <h5>{{price[i]}}</h5>
+                                   </td>
+                                   <td>
+                                      <button type="button" class="btn btn-default btn-lg " (click)="ondelete(item,i)">
+                                          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </button>
+
+                                   </td>
+                      </tr>
+                      <tr class="bottom_button">
+                          <td>
+                              <a class="gray_btn"  >Update Cart</a>
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                              <div class="cupon_text d-flex align-items-center">
+                                  <input type="text" placeholder="Coupon Code">
+                                  <a   class="genric-btn info">Apply</a> &nbsp;&nbsp;
+                                  <a   class="genric-btn info">Close Coupon</a> &nbsp;&nbsp;
+
+                                </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                              <h3>Subtotal</h3>
+                          </td>
+                          <td>
+                              <h3>{{total1}}</h3>
+                          </td>
+                      </tr>
+                      <tr class="shipping_area">
+
+                      </tr>
+                      <tr class="out_button_area">
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+
+                          </td>
+                          <td>
+                              <div class="checkout_btn_inner d-flex align-items-center">
+                                  <a  class="genric-btn info">Continue Shopping</a> &nbsp;&nbsp;
+                                  <a  class="genric-btn info" (click)=" checkout()">Checkout</a> &nbsp;&nbsp;
+
+                                            </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+
+  </div>
+</section>

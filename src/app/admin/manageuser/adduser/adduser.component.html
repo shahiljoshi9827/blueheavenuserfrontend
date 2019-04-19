@@ -1,0 +1,58 @@
+<!-- <mat-card style="height:auto; width:500px; margin-left:480px;position: relative; "> -->
+  <!-- <mat-card style="height:auto; width:500px; margin-left:480px;margin-top:120px ">
+
+  <div class="container" >
+      <h1 align="center">AddUser</h1>
+    <table  class="table ">
+      <tr >
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="EMAIL ID"  #email="ngModel" type="email" [(ngModel)]="user_email_id" required email >
+        <mat-error *ngIf="email.hasError('required')"> Email Is Required</mat-error>
+        <mat-error *ngIf="!email.hasError('required')"> Enter an valid Email</mat-error>
+      </mat-form-field>
+    </tr>
+
+    <tr>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="user name" type="text" [(ngModel)]="user_name" >
+        </mat-form-field>
+    </tr>
+
+    <tr>
+      <mat-form-field class="example-full-width">
+        <input matInput [type]="flag?'password':'text'"  placeholder="password" type="password" [(ngModel)]="user_password" minlength="8">
+        <mat-icon (click)="flag=!flag" matSuffix>{{flag?'visibility':'visibility_off'}}</mat-icon>
+      </mat-form-field>
+    </tr>
+
+    <tr>
+        <mat-form-field class="example-full-width">
+          <span matPrefix>+91 &nbsp;</span>
+          <input type="number" matInput placeholder="Mobile Number" [(ngModel)]="user_mobile_no" type.maxlength="10" >
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field>
+    </tr>
+    <tr>
+           <mat-form-field class="example-full-width">
+             <input matInput placeholder="address" type="text" [(ngModel)]="user_address">
+           </mat-form-field>
+    </tr>
+    <tr>
+        <mat-form-field class="example-full-width">
+          <input matInput [matDatepicker]="picker" [(ngModel)]="user_dob" placeholder="BirthDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+        </mat-form-field>
+    </tr>
+    <tr>
+        <mat-radio-group [(ngModel)]="user_gender">
+          <mat-radio-button value="Male"   id="Male">Male</mat-radio-button>&nbsp;
+          <mat-radio-button value="Female"  id="FeMale" >Female</mat-radio-button>
+        </mat-radio-group>
+    </tr>
+  </table><br><br>
+  <button mat-raised-button color="primary" (click)="adduser()">AddUser</button>&nbsp;
+
+  </div>
+  </mat-card> -->
+<app-signuppage></app-signuppage>

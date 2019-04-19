@@ -1,0 +1,206 @@
+<script>
+  $(document).ready(function() {
+     var navoffeset=$(".navbar").offset().top;
+     $(window).scroll(function(){
+      var scrollpos=$(window).scrollTop();
+      if(scrollpos >=navoffeset){
+        $(".navbar").addClass("fixed");
+      }else{
+        $(".navbar").removeClass("fixed");
+      }
+     });
+
+  });
+  </script>
+
+	<header class="header_area sticky-header"  style="position:fixed;">
+		<div class="main_menu " >
+			<nav class="navbar navbar-expand-lg navbar-light main_box"    >
+				<div class="container" style="margin-left: 280px;">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a><img src ="../../assets/images/PicsArt_03-12-06.25.48.png" style="height: 96px;width: 120px;margin-left:-220px;margin-top: -0.5px;" alt=""></a>
+					<button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div  class="collapse navbar-collapse offset" id="navbarSupportedContent">
+					<ul   class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item"><a class="nav-link"  [routerLink]="['/homeuser']" [routerLinkActive]="" >Home</a></li>
+							<li class="nav-item submenu dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false" [routerLink]="['/displayproduct']">Shop</a>
+
+							</li>
+							<li class="nav-item submenu dropdown">
+								<a   [routerLink]="['/aboutus']" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">AboutUs</a>
+							</li>
+        			<li class="nav-item"><a class="nav-link" [routerLink]="['/contactus']" >Contact</a></li>
+
+              <li class="nav-item submenu dropdown">
+								<a [routerLink]="['/faq']"  class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+								 aria-expanded="false">FAQ</a>
+							</li>
+              <li class="nav-item"  ><a *ngIf="user_name" [routerLink]="['/addtocart']"  ><span  class="glyphicon glyphicon-shopping-cart" style="margin-top: -18px; color:blue;"></span></a></li>
+
+
+            </ul>
+						<ul class="nav navbar-nav navbar-right">
+
+
+              <li class="nav-item">
+                <button href="#" class="search" style="margin-top: -8px; color:blue;" onclick="toggle_visibility('search_input_box');"><span class="lnr lnr-magnifier" id="search"></span></button>
+              </li>
+              <li class="nav-item">
+              <button type="button" style="margin-top: 15px;margin-left:180px;width:160px; " [routerLink]="['/login']"  class="btn btn-outline-primary" *ngIf="!user_name">Login | Signup</button>
+              <!-- <button type="button" style="margin-top: 15px;margin-left:180px;width:160px; "  class="btn btn-outline-primary" *ngIf="!flag">{{user_name}}</button> -->
+              <div class="btn-group" *ngIf="user_name" style="margin-top: 15px;margin-left:180px;width:160px; " >
+                  <button type="button" class="btn btn-outline-primary" style="width:90px;" ><i class="glyphicon glyphicon-user"></i> {{user_name}}</button>
+                  <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+<br>
+<br>
+                  <div class="dropdown-menu" >
+                    <a class="dropdown-item" [routerLink]="['/displayuser']" ><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp; View Profile</a>
+                    <a class="dropdown-item" [routerLink]="['/myorder']"><i class="fa fa-shopping-bag"></i>&nbsp;&nbsp;My Orders</a>
+                    <a class="dropdown-item" [routerLink]="['/track']"><i class="fa fa-location-arrow"></i>&nbsp;&nbsp;Trackorder</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" (click)="logout()"><i class="glyphicon glyphicon-off"></i> &nbsp;&nbsp; LogOut</a>
+                  </div>
+
+
+                </div>
+
+            </li>
+
+            <li class="nav-item">
+              <!-- Example single danger button -->
+<!-- Example split danger button -->
+<i *ngIf="user_name" class="fa fa-heart abc" [routerLink]="['/wishlist']" style="margin-left:0px;margin-top:25px;font-size:19px;color:blue"></i>
+            </li>
+            </ul>
+
+          </div>
+				</div>
+			</nav>
+		</div>
+		<div class="search_input" id="search_input_box"  style="display:none;" >
+			<div class="container" >
+				<form class="d-flex justify-content-between">
+          <input type="text" class="form-control" id="search_input" placeholder="Search Here" [(ngModel)]="searchItem" >
+
+					<button type="submit" class="btn"></button>
+					<span class="lnr lnr-cross" id="close_search" title="Close Search" onclick="toggle_visibility('search_input_box');"></span>
+				</form>
+			</div>
+		</div>
+
+  </header>
+
+
+
+
+<div class="row" >
+<router-outlet></router-outlet>
+</div>
+
+
+  <footer class="footer-area section_gap" style="width:1530px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3  col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Company Info</h6>
+						<p>
+                <a><img src ="../../assets/images/PicsArt_03-12-06.25.48.png" style="height: 106px;width: 130px;margin-left:0;margin-top: -0.5px;" alt=""></a>
+
+
+            </p>
+            <br>
+            <br>
+            <br>
+            <h6 style="margin-left:10px; ">BlueHeaven</h6>
+						<div class="footer-social d-flex align-items-center">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-instagram"></i></a>
+							<a href="#"><i class="fa fa-whatsapp"></i></a>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-4  col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+            <h6>Newsletter</h6>
+
+            <p style="color: white;">Stay update with our latest things By<br> Subscribing Our Newletter</p>
+            <br>
+						<div class="" id="mc_embed_signup">
+
+							<form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+							 method="get" class="form-inline">
+
+								<div class="d-flex flex-row">
+
+									<input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '"
+									 required="" type="email">
+
+
+									<button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+									<div style="position: absolute; left: -5000px;">
+										<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+									</div>
+
+									<!-- <div class="col-lg-4 col-md-4">
+												<button class="bb-btn btn"><span class="lnr lnr-arrow-right"></span></button>
+											</div>  -->
+								</div>
+								<div class="info"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3  col-md-6 col-sm-6">
+					 <div class="single-footer-widget mail-chimp">
+						<h6 class="mb-20">Contact Us</h6>
+            <div style="color: white;" >
+                    <h6><i class="lnr lnr-home"></i>&nbsp;&nbsp;Ahmedabad,India</h6>
+
+                  Covers All Over Ahmedabad
+                  <br>
+                  <br>
+                  <h6><i class="lnr lnr-phone-handset"></i>&nbsp;&nbsp;
+                  <a >+91 9867878787 </a></h6>
+                  <p>Mon to Fri 9am to 6 pm</p>
+                  <br>
+
+                  <h6><i class="lnr lnr-envelope"></i>&nbsp;&nbsp;
+                  <a >help.blueheaven@gmail.com</a></h6>
+                  Send us your query anytime!
+                 </div>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<h6>Follow Us</h6>
+            <p style="color: white;">Let us be social</p>
+            <br>
+
+						<div class="footer-social d-flex align-items-center">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-instagram"></i></a>
+							<a href="#"><i class="fa fa-whatsapp"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
+				<p style="color: white;" class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This webapp is made by <a href="https://BlueHeaven.com" target="_blank"></a>BlueHeaven
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+			</div>
+		</div>
+	</footer>

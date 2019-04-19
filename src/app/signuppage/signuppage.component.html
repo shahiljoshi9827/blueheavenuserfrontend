@@ -1,0 +1,187 @@
+<!-- <mat-card style="height:auto; width:500px; margin-left:480px;margin-top:120px ">
+<div class="container" >
+    <h1 align="center">Signup</h1>
+  <table  class="table ">
+    <tr >
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="EMAIL ID"  #email="ngModel" type="email" [(ngModel)]="user_email_id" required email >
+      <mat-error *ngIf="email.hasError('required')"> Email Is Required</mat-error>
+      <mat-error *ngIf="!email.hasError('required')"> Enter an valid Email</mat-error>
+    </mat-form-field>
+  </tr>
+
+  <tr>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="user name" type="text" [(ngModel)]="user_name" >
+      </mat-form-field>
+  </tr>
+
+  <tr>
+    <mat-form-field class="example-full-width">
+      <input matInput [type]="flag?'password':'text'"  placeholder="password" type="password" [(ngModel)]="user_password" minlength="8">
+      <mat-icon (click)="flag=!flag" matSuffix>{{flag?'visibility':'visibility_off'}}</mat-icon>
+    </mat-form-field>
+  </tr>
+
+  <tr>
+      <mat-form-field class="example-full-width">
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="number" matInput placeholder="Mobile Number" [(ngModel)]="user_mobile_no" type.maxlength="10" >
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+  </tr>
+  <tr>
+         <mat-form-field class="example-full-width">
+           <input matInput placeholder="address" type="text" [(ngModel)]="user_address">
+         </mat-form-field>
+  </tr>
+  <tr>
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="picker" [(ngModel)]="user_dob" placeholder="BirthDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+  </tr>
+  <tr>
+      <mat-radio-group [(ngModel)]="user_gender">
+        <mat-radio-button value="Male"   id="Male">Male</mat-radio-button>&nbsp;
+        <mat-radio-button value="Female"  id="FeMale" >Female</mat-radio-button>
+      </mat-radio-group>
+  </tr>
+</table><br><br>
+<button mat-raised-button color="primary" (click)="signupuser()">SIGN UP</button>&nbsp;
+<button mat-raised-button color="primary" (click)="loginuser()">LOG IN</button><br><br>
+</div>
+</mat-card> -->
+<section class="banner-area organic-breadcrumb" style="width:1540px;">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Login/Register</h1>
+					<nav class="d-flex align-items-center">
+						<a [routerLink]="['/homeuser']">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a [routerLink]="['/signup']">Login/Register</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+  <!-- End Banner Area -->
+
+
+	<!--================Login Box Area =================-->
+	<section class="login_box_area section_gap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="login_box_img">
+						<img  src="../../assets/images/water-background.jpg" width="80%" height="640px" alt="">
+						<div class="hover">
+							<h4>Already in our website?</h4>
+							<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
+							<a class="primary-btn" (click)="loginuser()" style="color: white" >Sign in </a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="login_form_inner">
+            <h3 style="margin-top: -100px;">Signup To Join Our Community</h3>
+            <br>
+            <form class="example-form row login_form" (ngSubmit)="signupuser(f1)" #f1="ngForm" >
+                <mat-form-field class="example-full-width">
+                    <br>
+
+                    <input matInput placeholder="EMAIL ID"  #email="ngModel" type="email" [(ngModel)]="user_email_id" required email name="user_email_id" >
+                      <mat-error *ngIf="email.hasError('required')"> Email Is Required</mat-error>
+                      <mat-error *ngIf="!email.hasError('required')"> Enter an valid Email</mat-error>
+                    </mat-form-field>
+
+              <mat-form-field class="example-full-width" >
+
+                  <input matInput placeholder="user name" type="text" [(ngModel)]="user_name" name="user_name" id="user_name" #name="ngModel" required >
+
+                </mat-form-field>
+
+                <div [hidden]="name.valid || name.untouched">
+                    <div [hidden]="!name?.errors?.required"></div>
+                    <mat-error>Name is required*</mat-error>
+                </div>
+
+                <br>
+
+                  <mat-form-field class="example-full-width" >
+                    <input matInput [type]="flag?'password':'text'"  placeholder="password" type="password" [(ngModel)]="user_password" minlength="8" name="user_password" required>
+                    <mat-icon (click)="flag=!flag" matSuffix>{{flag?'visibility':'visibility_off'}}</mat-icon>
+
+                  </mat-form-field>
+
+                  <br>
+
+
+                  <mat-form-field class="example-full-width" >
+                    <span matPrefix>+91 &nbsp;</span>
+                    <input type="number" matInput placeholder="Mobile Number" [(ngModel)]="user_mobile_no" type.maxlength="10"  #colour="ngModel" id="user_mobile_no" required name="user_mobile_no" >
+                    <mat-icon matSuffix>mode_edit</mat-icon>
+
+                  </mat-form-field>
+
+                  <div [hidden]="colour.valid || colour.untouched">
+                      <div [hidden]="!colour?.errors?.required"></div>
+                      <mat-error>Phone Number is required*</mat-error>
+                  </div>
+
+                  <mat-form-field class="example-full-width" >
+                      <input matInput placeholder="address" type="text" [(ngModel)]="user_address" name="user_address" #weight="ngModel" id="user_address" required>
+
+                  </mat-form-field>
+
+                  <div [hidden]="weight.valid || weight.untouched">
+                      <div [hidden]="!weight?.errors?.required"></div>
+                      <mat-error>Address is required*</mat-error>
+                  </div>
+                  <br>
+
+                    <mat-form-field class="example-full-width" >
+                      <input matInput [matDatepicker]="picker" [(ngModel)]="user_dob" placeholder="BirthDate" name="user_dob" #warranty="ngModel" id="user_dob" required>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker touchUi #picker></mat-datepicker>
+                    </mat-form-field>
+
+
+
+                    <div [hidden]="warranty.valid || warranty.untouched">
+                        <div [hidden]="!warranty?.errors?.required"></div>
+                        <mat-error>DOB is required*</mat-error>
+                    </div>
+
+                    <br>
+
+                    <div class="col-md-12 form-group">
+                        <br>
+                        <mat-radio-group [(ngModel)]="user_gender" name="user_gender">
+                              <mat-radio-button value="Male"   id="Male">Male</mat-radio-button>&nbsp;
+                              <mat-radio-button value="Female"  id="FeMale" >Female</mat-radio-button>
+                            </mat-radio-group>
+
+                      </div>
+
+            <br>
+
+            <div class="col-md-12 form-group">
+
+                <br>
+                <br>
+
+
+                <button type="submit" value="submit" [disabled]="!f1.valid" class="primary-btn" (click)="signupuser()">Sign Up</button>
+</div>
+
+                </form>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

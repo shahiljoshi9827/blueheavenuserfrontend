@@ -1,0 +1,48 @@
+<section class="banner-area organic-breadcrumb" style="width: 1530px;">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Order Tracking</h1>
+                <nav class="d-flex align-items-center">
+                    <a [routerLink]="['/homeuser']">Home<span class="lnr lnr-arrow-right"></span></a>
+                    <a [routerLink]="['/track']">track Order</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!-- End Banner Area -->
+
+  <!--================Tracking Box Area =================-->
+  <section class="tracking_box_area section_gap">
+    <div class="container">
+        <div class="tracking_box_inner">
+            <p>To track your order please enter your Order ID in the box below and press the "Track" button. This
+                was given to you on your receipt and in the confirmation email you should have received.</p>
+            <form class="row tracking_form" method="post" novalidate="novalidate">
+                <div class="col-md-12 form-group">
+                    <input type="number" class="form-control"  name="mainorder_id" [(ngModel)]="mainorder_id" placeholder="Order ID" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Order ID'">
+                </div>
+                <div class="col-md-12 form-group">
+                    <input type="email" class="form-control"  name="fk_email_id" [(ngModel)]="fk_email_id" placeholder="Billing Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Billing Email Address'">
+                </div>
+                <div class="col-md-12 form-group">
+                    <button type="submit" value="submit" class="primary-btn" (click)="ontrackorder(mainorder_id,fk_email_id)">Track Order</button>
+                </div>
+            </form>
+        </div>
+        <div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+        data-mlat="40.701083" data-mlon="-74.1522848">
+        <h2 *ngIf="f1">Order Status::Pending</h2>
+        <br>
+        <iframe *ngIf="f1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.74171348674!2d72.54355431480171!3d23.06992898492907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e833ec3a7b22d%3A0x8139d9dfa51dbee8!2sMineral+water+suppliers!5e0!3m2!1sen!2sin!4v1553271303392" width="1110" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <h2 *ngIf="f2">Order Status::On The Way</h2>
+        <br>
+        <iframe *ngIf="f2"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.950929150606!2d72.54078971480091!3d23.025573884951488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84dc3fffffff%3A0x1ea755370eb1648e!2sShri+Sahjanand+Arts+%26+Comm+College!5e0!3m2!1sen!2sin!4v1555624907936!5m2!1sen!2sin" width="1110" height="450"  frameborder="0" style="border:0" allowfullscreen></iframe>
+        <h2 *ngIf="f3">Order Status::Deliverd at your Location!</h2>
+        <br>
+        <iframe *ngIf="f3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.654912947716!2d72.54580381480102!3d23.036439484946037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84eb2ad9d19d%3A0xf2b4a864174675d9!2sK+S+School+Of+Business+Management!5e0!3m2!1sen!2sin!4v1555624998275!5m2!1sen!2sin" width="1110" height="450"  frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </section>

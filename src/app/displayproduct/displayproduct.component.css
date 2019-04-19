@@ -1,0 +1,31 @@
+.example-card {
+  width: 70%;
+  height: 70%;
+}
+
+.mat-card{
+  width: 20%;
+  height: 50%;
+}
+.imagess{
+  margin-left: 31px;
+  width:60%;
+  height: 50%;
+}
+.card {
+  border-radius: 15px;
+
+}
+.zoom {
+  padding: 50px;
+  background-color:transparent;
+  transition: transform .2s; /* Animation */
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(2.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+

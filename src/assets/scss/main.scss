@@ -1,0 +1,18 @@
+
+// including variables and mixins
+@import "../scss/theme/variables";
+@import "../scss/theme/mixins";
+@import "../scss/theme/predefine";
+@import "../scss/theme/reset";
+
+
+// Custom Scss
+@import "../scss/theme/elements";
+@import "../scss/theme/header";
+@import "../scss/theme/banner";
+@import "../scss/theme/home";
+@import "../scss/theme/common";
+@import "../scss/theme/product";
+@import "../scss/theme/blog";
+@import "../scss/theme/contact";
+@import "../scss/theme/footer";

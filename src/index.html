@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha384-PmY9l28YgO4JwMKbTvgaS7XNZJ30MK9FAZjjzXtlqyZCqBY6X6bXIkM++IkyinN+" crossorigin="anonymous">
+
+<link rel="stylesheet" href="./assets/bootstrap-3.4.0-dist/css/bootstrap.css">
+<link rel="stylesheet" href="./assets/bootstrap-3.4.0-dist/css/bootstrap-theme.css">
+  <meta charset="utf-8">
+  <title>Blueheaven</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="HandheldFriendly" content="true">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="../src/assets/css/linearicons.css">
+	<link rel="stylesheet" href="../src/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../src/assets/css/themify-icons.css">
+	<link rel="stylesheet" href="../src/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="../src/assets/css/owl.carousel.css">
+	<link rel="stylesheet" href="../src/assets/css/nice-select.css">
+	<link rel="stylesheet" href="../src/assets/css/nouislider.min.css">
+	<link rel="stylesheet" href="../src/assets/css/ion.rangeSlider.css" />
+	<link rel="stylesheet" href="../src/assets/css/ion.rangeSlider.skinFlat.css" />
+	<link rel="stylesheet" href="../src/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="../src/assets/css/main.css">
+  <link rel="stylesheet" href="../src/assets/scss/main.scss">
+  <link rel="stylesheet" href="../src/assets/scss/theme/_header.scss">
+  <link rel="stylesheet" href="../src/assets/scss/theme/_blog.scss">
+  <link rel="stylesheet" href="../src/assets/scss/theme/_footer.scss">
+  <link rel="stylesheet" href="../src/assets/scss/theme/_home.scss">
+  <link rel="stylesheet" href="../src/assets/scss/theme/_mixins.scss">
+  <link rel="stylesheet" href="../src/assets/scss/theme/_predefine.scss">
+  <link rel="stylesheet" href="../src/assets/Karma Shop-doc/css/normalize.min.css">
+  <link rel="stylesheet" href="../src/assets/Karma Shop-doc/css/main.css">
+
+
+
+
+
+
+	<script src="../src/assets/js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	 crossorigin="anonymous"></script>
+	<script src="../src/assets/js/vendor/bootstrap.min.js"></script>
+	<script src="../src/assets/js/jquery.ajaxchimp.min.js"></script>
+	<script src="../src/assets/js/jquery.nice-select.min.js"></script>
+	<script src="../src/assets/js/jquery.sticky.js"></script>
+	<script src="../src/assets/js/nouislider.min.js"></script>
+	<script src="../src/assets/js/countdown.js"></script>
+	<script src="../src/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="../src/assets/js/owl.carousel.min.js"></script>
+  <script src="../src/assets/Karma Shop-doc/js/jquery-1.11.0.min.js"></script>
+  <script src="../src/assets/Karma Shop-doc/js/jquery.nav.js"></script>
+  <script src="../src/assets/Karma Shop-doc/js/custom.js"></script>
+  <script src="../src/assets/js/jquery.ajaxchimp.min.js"></script>
+  <script type="text/javascript">
+
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+</script>
+    <script>
+      $(document).ready(function() {
+         var navoffeset=$(".header-main").offset().top;
+         $(window).scroll(function(){
+          var scrollpos=$(window).scrollTop();
+          if(scrollpos >=navoffeset){
+            $(".header-main").addClass("fixed");
+          }else{
+            $(".header-main").removeClass("fixed");
+          }
+         });
+
+      });
+      </script>
+
+
+
+
+  <!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="../src/assets/js/gmaps.min.js"></script>
+	<script src="../src/assets/js/main.js"></script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

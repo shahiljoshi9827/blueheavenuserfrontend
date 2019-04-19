@@ -1,0 +1,350 @@
+<!-- <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+  <source src="../../../assets/Video Loop - Water Waves.mp4.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+
+<div class="content">
+  <div id="section-cta">
+    <h3>  </h3>
+    <a class="button"></a>
+  </div>
+  <h1>Heading</h1>
+  <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>
+
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script> -->
+
+
+
+<!-- <div class="col-lg-3 col-md-6"  *ngFor="let item of displayproductarr">
+  <div class="single-product" (click)="product_click(item)">
+    <img class="img-fluid" src="http://localhost:3000/images/products/{{ item.product_image }}" alt="">
+    <div class="product-details">
+      <h6>{{ item.product_name | titlecase }}</h6>
+      <div class="price">
+        <h6>{{ item.product_price | currency: "&#8377;" }}</h6>
+        <h6 class="l-through">210.00</h6>
+      </div>
+      <div class="prd-bottom">
+
+        <a href="" class="social-info">
+          <span class="ti-bag"></span>
+          <p class="hover-text" (click)="addtocart(item)">add to bag</p>
+        </a>
+        <a href="" class="social-info">
+          <span class="lnr lnr-heart"></span>
+          <p class="hover-text">Wishlist</p>
+        </a>
+        <a href="" class="social-info">
+          <span class="lnr lnr-sync"></span>
+          <p class="hover-text">compare</p>
+        </a>
+        <a href="" class="social-info">
+          <span class="lnr lnr-move"></span>
+          <p class="hover-text">view more</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <mat-card class="col-sm-6 col-md-4 " *ngFor="let item of displayproductarr">
+  <div (click)="product_click(item)">
+    <img
+      mat-card-image
+      class="imagess"
+      src="http://localhost:3000/images/products/{{ item.product_image }}"
+    />
+    <mat-card-content>
+      <h3>{{ item.product_name | titlecase }}</h3>
+      <p>{{ item.product_price | currency: "&#8377;" }}</p>
+    </mat-card-content>
+  </div>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="addtocart(item)">
+      ADD TO CART
+    </button>
+  </mat-card-actions>
+</mat-card> -->
+
+<!-- <div class="col-lg-3 col-md-6"  *ngFor="let item of displayproductarr">
+  <div class="single-product" (click)="product_click(item)">
+    <img class="img-fluid" src="http://localhost:3000/images/products/{{ item.product_image }}" alt="">
+    <div class="product-details">
+      <h6>{{ item.product_name | titlecase }}</h6>
+      <div class="price">
+        <h6>{{ item.product_price | currency: "&#8377;" }}</h6>
+        <h6 class="l-through">210.00</h6>
+      </div>
+      <div class="prd-bottom">
+
+        <a href="" class="social-info">
+          <span class="ti-bag"></span>
+          <p class="hover-text" (click)="addtocart(item)">add to bag</p>
+        </a>
+        <a href="" class="social-info">
+          <span class="lnr lnr-heart"></span>
+          <p class="hover-text">Wishlist</p>
+        </a>
+        <a href="" class="social-info">
+          <span class="lnr lnr-sync"></span>
+          <p class="hover-text">compare</p>
+        </a>
+        <a href="" class="social-info">
+          <span class="lnr lnr-move"></span>
+          <p class="hover-text">view more</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <mat-card class="col-sm-6 col-md-4 " *ngFor="let item of displayproductarr">
+  <div (click)="product_click(item)">
+    <img
+      mat-card-image
+      class="imagess"
+      src="http://localhost:3000/images/products/{{ item.product_image }}"
+    />
+    <mat-card-content>
+      <h3>{{ item.product_name | titlecase }}</h3>
+      <p>{{ item.product_price | currency: "&#8377;" }}</p>
+    </mat-card-content>
+  </div>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" (click)="addtocart(item)">
+      ADD TO CART
+    </button>
+  </mat-card-actions>
+</mat-card> -->
+  <!-- start banner Area -->
+
+  <section class="banner-area" style="width:1530px;">
+
+  </section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- <div id="slider" >
+    <figure>
+    <img src="../../assets/images/water-background.jpg">
+    <img src="../../assets/images/gradient-blue-background-3.png">
+    <img src="../../assets/images/">
+    <img src="images/France.jpg">
+    <img src="images/Amsterdam.jpg">
+    </figure>
+
+    </div>
+ -->
+ <div class="row" style="margin-top: -28px;">
+   <div class="row">
+      <img src="../../assets/images/austin-schmid-28815-unsplash.jpg" style="width:100%;height:500px;">
+    <label style="position:absolute;color:white;;font-size: 30px;margin-left: 350px;margin-top: 200px;">PURE & HYGIENIC DRINKING WATER DELIVERED TO YOUR DOORSTEP</label>
+    <br>
+    <br>
+
+      <button type="button" class="btn" style="position: absolute;margin-left:630px;background-color:orange;margin-top: 300px;color:black;height:40px;width:150px;" [routerLink]="['/displayproduct']">BOOK A CAN</button>
+      <button type="button" class="btn" style="position: absolute;margin-left:830px;margin-top: 300px;background-color: lightskyblue;color:black;height:40px;width:150px;" [routerLink]="['/aboutus']" >KNOW MORE</button>
+
+      </div>
+
+ </div>
+    <br>
+
+
+	<!-- Start category Area -->
+
+  <!-- End category Area -->
+
+	<section class="features-area section_gap">
+
+    <div class="container" style="background-color: lightskyblue;">
+        <div class="row features-inner">
+          <!-- single features -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-features">
+              <div class="f-icon">
+                <img src="../../assets/img/features/f-icon1.png" alt="">
+              </div>
+              <h6>Free Delivery*</h6>
+              <p>Free Shipping* </p>
+            </div>
+          </div>
+          <!-- single features -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-features">
+              <div class="f-icon">
+                <img src="../../assets/img/features/f-icon2.png" alt="">
+              </div>
+              <h6>Return Policy</h6>
+              <p>Free Shipping* </p>
+            </div>
+          </div>
+          <!-- single features -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-features">
+              <div class="f-icon">
+                <img src="../../assets/img/features/f-icon3.png" alt="">
+              </div>
+              <h6>24/7 Support</h6>
+              <p>Free Shipping*</p>
+            </div>
+          </div>
+          <!-- single features -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-features">
+              <div class="f-icon">
+                <img src="../../assets/img/features/f-icon4.png" alt="">
+              </div>
+              <h6>Secure Payment</h6>
+              <p>Free Shipping*</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+	<!-- start product Area -->
+
+	<!-- end product Area -->
+
+	<!-- Start exclusive deal Area -->
+	<!-- End exclusive deal Area -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <label style="position:absolute;color:black;font-size: 30px;margin-left: 600px;">DRINKING WATER PROCESS</label>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="row" style="margin-left: 250px;">
+
+    <iframe    class='youtube-player' type='text/html' width='1090' height='360' src='https://www.youtube.com/embed/cATh5RJ7wOQ?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='false' style='border:0;'></iframe>
+  <!-- Start brand Area -->
+</div>
+  <section class="brand-area section_gap">
+      <label style="position:absolute;color:black;font-size: 30px;margin-left: 690px;">OUR BRANDS</label>
+<br>
+<br>
+<br>
+<br>
+
+    <div class="container" >
+
+      <div class="row">
+				<a class="col single-img"  >
+					<img class="img-fluid d-block mx-auto" height="150px" width="150px" src="../../assets/images/aquafina-logo-C3C8687788-seeklogo.com.png" alt="">
+				</a>
+				<a class="col single-img"  >
+					<img class="img-fluid d-block mx-auto" height="150px" width="150px" src="../../assets/images/69519_1517078109.jpg" alt="">
+				</a>
+				<a class="col single-img"  >
+					<img class="img-fluid d-block mx-auto" height="150px" width="150px" src="../../assets/images/031d65ce5091e8a517aee519e546dcc2.jpeg" alt="">
+				</a>
+				<a class="col single-img"  >
+					<img class="img-fluid d-block mx-auto" height="150px" width="200px" src="../../assets/images/Bisleri-logo.jpg" alt="">
+				</a>
+				<a class="col single-img"  >
+					<img class="img-fluid d-block mx-auto" height="150px" width="150px" src="../../assets/images/2d5ee112-f441-40d9-8876-642e77455523.png" alt="">
+				</a>
+			</div>
+		</div>
+  </section>
+  <div id="css-only-modals"   >
+      <input id="modal1" class="css-only-modal-check" type="checkbox" checked/>
+      <div class="css-only-modal"  >
+        <label for="modal1" class="css-only-modal-close"  ><i class="fa fa-times fa-2x" ></i></label>
+        <h2>Subscribe To Newsletter</h2>
+        <hr />
+        <label style="font-size: 20px;position:absolute;margin-left: -500px;">So we give you a Quick Update Of Our New Offers.</label>
+
+        <h3 ></h3>
+        <br>
+        <br>
+        <br>
+        <input type="text" class="form-control" placeholder="Enter Your Email">
+        <br>
+        <br>
+        <br>
+<!-- Add to your stylesheet -->
+<button type="button" class="btn" (click)="load()" style="background-color:orange;color:black ;height:40px;width:150px;" >Subscribe</button>
+</div>
+
+<!-- End brand Area -->
+
+	<!-- Start related-product Area -->
+
+	<!-- End related-product Area -->
+

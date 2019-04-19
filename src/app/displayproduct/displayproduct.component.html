@@ -1,0 +1,184 @@
+<body id="category">
+
+	<!-- Start Header Area -->
+	<!-- End Header Area -->
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb" style="width:1540px;">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Shop Category page</h1>
+					<nav class="d-flex align-items-center">
+						<a [routerLink]="['/homeuser']">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a [routerLink]="['/displayproduct']" >Shop</a>
+
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+  <div class="container">
+
+    <div class="row">
+			<div class="col-xl-3 col-lg-4 col-md-5" style="margin-left: -80px;">
+				<div class="sidebar-categories">
+					<div class="head">Browse Categories</div>
+					<ul class="main-categories">
+						<li class="main-nav-list"><a   (click)="brandpptoduct('all')" data-toggle="collapse" href="#fruitsVegetable" aria-expanded="false" aria-controls="fruitsVegetable"><span
+								 class="lnr lnr-arrow-right"></span><b>Brands</b><span class="number">(5)</span></a>
+							<ul class="collapse" id="fruitsVegetable" data-toggle="collapse" aria-expanded="false" aria-controls="fruitsVegetable">
+								<li class="main-nav-list child" *ngFor="let item of brandarr;let i=index" ><a (click)="brandpptoduct(item.brand_name)" >{{item.brand_name}}<span class="number">(13)</span></a></li>
+							</ul>
+						</li>
+
+
+					</ul>
+				</div>
+				<div class="sidebar-filter mt-50">
+					<div class="top-filter-head">Product Filters</div>
+					<div class="common-filter">
+						<div class="head">Brands</div>
+						<form action="#">
+							<ul>
+
+                    <li class="filter-list"><input type="checkbox" id="confirm-switch" checked>
+                  <label for="confirm-switch">
+               Bisleri<span>(29)</span></label></li>
+								<li class="filter-list"><input type="checkbox" id="confirm-switch" checked>
+                  <label for="confirm-switch">Kinely<span>(29)</span></label></li>
+								<li class="filter-list"><input type="checkbox" id="confirm-switch" checked>
+                  <label for="confirm-switch">Aquafina<span>(19)</span></label></li>
+								<li class="filter-list"><input type="checkbox" id="confirm-switch" checked>
+                  <label for="confirm-switch">Himalayan<span>(19)</span></label></li>
+								<li class="filter-list"><input type="checkbox" id="confirm-switch" checked>
+                  <label for="confirm-switch">Helly<span>(19)</span></label></li>
+							</ul>
+						</form>
+					</div>
+					<div class="common-filter">
+						<div class="head">Qty</div>
+						<form action="#">
+							<ul>
+
+                                      <li class="filter-list"><input class="pixel-radio" type="radio" id="black" name="color"><label for="black">500ml<span>(29)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather" name="color"><label for="balckleather">1ml<span>(29)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="blackred" name="color"><label for="blackred">2ml<span>(19)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="gold" name="color"><label for="gold">5ml<span>(19)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey" name="color"><label for="spacegrey">20ml<span>(19)</span></label></li>
+							</ul>
+						</form>
+					</div>
+									</div>
+      </div>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+
+      <div class="col-xl-9 col-lg-8 col-md-7" >
+				<!-- Start Filter Bar -->
+
+        <div class="filter-bar d-flex flex-wrap align-items-center" style="width:1050px;box-shadow: 5px 5px 5px grey;border-radius: 4px;margin-left: -10px;background-color: skyblue ">
+
+          <div class="sorting">
+
+             <mat-form-field>
+                <mat-label>Sorting Product</mat-label>
+                <mat-select [(ngModel)]="sort" (selectionChange)="sorting()">
+                  <mat-option *ngFor="let food of foods " [value]="food.value">
+                    {{food.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>
+					<div class="sorting mr-auto">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+            <mat-form-field style="width:300px;margin-left: 80px;">
+              <input matInput   placeholder="Search Product" (keypress)="changedItem(searchedKeyword)" [(ngModel)]="searchedKeyword">
+            </mat-form-field>
+
+					</div>
+          <ul class="pagination">
+              <li><a  >1</a></li>
+              <li><a  >2</a></li>
+              <li><a  >3</a></li>
+              <li><a  >4</a></li>
+              <li><a  >5</a></li>
+            </ul>
+                    </div>
+
+				<!-- End Filter Bar -->
+        <!-- Start Best Seller -->
+
+        <br>
+        <br>
+
+				<section class="lattest-product-area pb-40 category-list">
+
+          <div class="row" style="width:1050px;">
+            <!-- single product -->
+       		  <div class="col-lg-3 col-md-3 card"  *ngFor="let item of displayproductarr"   >
+
+              <div class="single-product"  >
+
+                  <img class="img-fluid zoom" (click)="product_click(item)" src="http://localhost:3000/images/products/{{ item.product_image }}" style="width:250px;height: 250px;" alt="">
+                  <div class="product-details">
+                    <h6 (click)="product_click(item)" >{{ item.product_name | titlecase }}</h6>
+                    <div class="price">
+                      <h6 (click)="product_click(item)">{{ item.product_price | currency: "&#8377;" }}</h6>
+                      <h6 (click)="product_click(item)" class="l-through">210.00</h6>
+                    </div>
+                    <div class="prd-bottom">
+
+                      <a   class="social-info" >
+                        <span class="ti-bag" (click)="addtocart(item)"></span>
+                        <p class="hover-text" >add to bag</p>
+                      </a>
+                      <a   class="social-info">
+                        <span class="lnr lnr-heart" (click)="onclickwish(item)"></span>
+                        <p class="hover-text" >Wishlist</p>
+                      </a>
+                      <a   class="social-info" (click)="product_click(item)">
+                        <span class="lnr lnr-sync" (click)="product_click(item)"></span>
+                        <p class="hover-text" (click)="product_click(item)">Similar</p>
+                      </a>
+                      <a   class="social-info" (click)="product_click(item)">
+                        <span class="lnr lnr-move" (click)="product_click(item)"></span>
+                        <p class="hover-text"  (click)="product_click(item)">view more</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+					</div>
+
+        </section>
+
+        <!-- End Best Seller -->
+				<!-- Start Filter Bar -->
+				<!-- End Filter Bar -->
+			</div>
+		</div>
+  </div>
+
+  <br>
+  <br>
+
+	<!-- Start related-product Area -->
+
+	<!-- End related-product Area -->
+
+	<!-- start footer Area -->
+	<!-- End footer Area -->
+
+	<!-- Modal Quick Product View -->
+
+
+</body>
+

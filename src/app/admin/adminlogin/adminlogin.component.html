@@ -1,0 +1,29 @@
+<div class="container">
+<video class="video-fluid z-depth-1" style="position:fixed;" autoplay loop controls muted>
+    <source src="../../../assets/Video Loop - Water Waves.mp4.mp4" type="video/mp4" />
+</video>
+  <div class="abc" style="position:fixed;margin-left: 700px;margin-top: 200px;">
+  <table  class="table" align="center">
+    <tr>
+    <img  style="margin-left:50px;position: relative; " src="assets\images\logo.jpg" height="100px" width="100px"  >
+    </tr>
+      <tr >
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="EMAIL ID"  #email="ngModel" type="email" [(ngModel)]="user_email_id" required email >
+            <mat-error *ngIf="email.hasError('required')"> Email Is Required</mat-error>
+            <mat-error *ngIf="!email.hasError('required')"> Enter an valid Email</mat-error>
+          </mat-form-field>
+        </tr>
+        <tr>
+            <mat-form-field class="example-full-width">
+              <input matInput [type]="flag?'password':'text'"  placeholder="password" type="password" [(ngModel)]="user_password" minlength="8">
+              <mat-icon (click)="flag=!flag" matSuffix>{{flag?'visibility':'visibility_off'}}</mat-icon>
+            </mat-form-field>
+          </tr>
+
+
+  <button mat-raised-button color="primary" (click)="loginuser()">LOGIN</button>&nbsp;
+  <button mat-raised-button color="primary" (click)="cancel()">CANCEL</button>&nbsp;&nbsp;
+
+  </table></div>
+</div>

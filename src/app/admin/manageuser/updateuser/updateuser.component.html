@@ -1,0 +1,47 @@
+<mat-card style="height:auto; width:500px; margin-left:480px;margin-top:120px ">
+
+  <div class="container" >
+    <h1 align="center">EditUser</h1>
+  <table  class="table ">
+    <tr >
+    <mat-form-field style="width:500px; "class="example-full-width">
+      <input disabled matInput placeholder="EMAIL ID" type="email" [(ngModel)]="user_email_id" >
+    </mat-form-field>
+  </tr>
+  <tr>
+      <mat-form-field style="width:500px; "class="example-full-width">
+        <input matInput placeholder="user name" type="text" [(ngModel)]="user_name" >
+      </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field style="width:500px; "class="example-full-width">
+        <input matInput placeholder="Mobile no" type="text" [(ngModel)]="user_mobile_no">
+      </mat-form-field>
+    </tr>
+    <tr>
+         <mat-form-field style="width:500px; "class="example-full-width">
+           <input matInput placeholder="address" type="text" [(ngModel)]="user_address">
+         </mat-form-field>
+    </tr>
+    <tr>
+      <mat-form-field style="width:500px; " class="example-full-width">
+        <!-- <input matInput  type="text" [(ngModel)]="user_dob"> -->
+        <input matInput [matDatepicker]="picker" [(ngModel)]="user_dob" placeholder="BirthDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+    </tr>
+    <tr>
+      <!-- <mat-form-field class="example-full-width"> -->
+        <input   type="radio" value="Male" name="gender" [(ngModel)]="user_gender">Male
+        <input   type="radio" value="FeMale" name="gender" [(ngModel)]="user_gender">Female
+      <!-- </mat-form-field> -->
+ </tr>
+</table><br><br>
+<button mat-raised-button color="primary" (click)="saveprofile()">SAVE</button>&nbsp;&nbsp;&nbsp;
+
+
+</div>
+</mat-card>
+
+
